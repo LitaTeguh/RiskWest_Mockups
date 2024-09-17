@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RiskWest Dashboard</title>
+    
+    <!-- FullCalendar CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.0/main.min.css" rel="stylesheet">
+    
+    <!-- Your Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="image.png" alt="RiskWest Logo">
+        </div>
+        <div class="user">
+            <p>Welcome, Mark!</p>
+        </div>
+    </header>
+
+    <!-- Dashboard Page with Calendar and Upcoming Events -->
+    <section id="dashboard" class="section">
+        <h2>Dashboard</h2>
+        <!-- FullCalendar View -->
+        <div id="calendar"></div>
+
+        <!-- Task List and Upcoming Events -->
+        <div class="info-board">
+            <h3>Today's Tasks</h3>
+            <p>Meetings: Event06 - Risk Assessment at 10:00 AM</p>
+            <p>Task: Review Event05 risks</p>
+        </div>
+        <div class="event-list">
+            <h3>Upcoming Events</h3>
+            <ul>
+                <li><a href="event01.html">Event01 - Conference</a></li>
+                <li><a href="event06.html">Event06 - Assessment</a></li>
+                <li><a href="event07.html">Event07 - Workshop</a></li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- FullCalendar JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.0/main.min.js"></script>
+
+    <!-- Custom Script for Calendar Initialization -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var calendarEl = document.getElementById('calendar');
+
+            var calendar = new FullCalendar.Calendar(calendarEl, {
+                initialView: 'dayGridMonth', // Month view
+                events: [
+                    {
+                        title: 'Consultancy Seminar',
+                        start: '2024-09-02T18:00:00'
+                    },
+                    {
+                        title: 'Business Enterprise Meeting',
+                        start: '2024-09-03T18:00:00'
+                    },
+                    {
+                        title: 'Conference - Event01',
+                        start: '2024-09-12'
+                    },
+                    {
+                        title: 'Risk Assessment - Event06',
+                        start: '2024-09-17T10:00:00'
+                    }
+                ]
+            });
+
+            calendar.render();
+        });
+    </script>
+</body>
+</html>
+
